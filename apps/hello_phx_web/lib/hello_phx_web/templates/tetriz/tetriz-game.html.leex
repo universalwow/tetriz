@@ -1,0 +1,82 @@
+<div class="tetris-container"
+     phx-hook="StopKeyScroll">
+  <div class="board-container">
+<div class="tetris-grid"
+
+         phx-window-keyup="move"
+         style="
+                grid-template-columns: repeat(<%= @board.width %>, 1fr);
+                grid-template-rows: repeat(<%= @board.height %>, 1fr);
+                "
+         >
+
+
+      <%= for {x,y} <- @active_shape.coordinates do %>
+          <div class="tetris grid-tile"
+               style="
+                      grid-row: <%= y + @offset_y %>;
+                      grid-column: <%= x + @offset_x %>;
+                      background-color: <%= @active_shape.color %>
+                      " >
+          </div>
+          <% end %>
+
+          <%= for {{x, y}, color} <- @lanes do %>
+
+                  <div class="tetris grid-tile"
+                       style="
+                              grid-row: <%= y %>;
+                              grid-column: <%= x  %>;
+                              background-color: <%= color %>
+                              " >
+                  </div>
+                  <% end %>
+
+
+    </div>
+
+  </div>
+
+
+
+  <aside>
+    <div class="next-shape-container">
+      <div class="next-shape-wrapper">
+        <p>
+          Next Shape
+        </p>
+        <div class="next-shape-grid">
+          <%= for {x,y} <- @next_shape.coordinates do %>
+              <div class="tetris grid-tile"
+                   style="
+                          grid-row: <%= y + 2 %>;
+                          grid-column: <%= x + 2 %>;
+                          background-color: <%= @next_shape.color %>
+                          " >
+              </div>
+              <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="score">
+      <span> Score: <%= @score %> </span>
+    </div>
+
+
+    <ul>
+      <li> 使用方向键
+      <li> 左右移动 </li>
+      <li> 上变换 </li>
+      <li> 下加速 </li>
+      <li>
+        <span class="game-title">
+          俄罗斯方块
+        </span>
+      </li>
+    </ul>
+</div>
+
+</aside>
+
+</div>

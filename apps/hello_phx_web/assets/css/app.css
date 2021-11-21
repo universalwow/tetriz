@@ -1,0 +1,161 @@
+/* This file is for your main application css. */
+
+/* @import "./phoenix.css"; */
+
+.tetris-container {
+  display: flex;
+  flex-direction: column;
+  /* background-image: url("/images/tetris_bg.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tetris-grid {
+  display: grid;
+  background: white;
+  width: fit-content;
+  height: fit-content;
+  /* grid-template-columns: repeat(40, 1fr); */
+  /* grid-template-rows: repeat(10, 1fr); */
+  grid-gap: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid brown;
+  box-shadow: 0 0 1px #f6f;
+  
+}
+
+.next-shape-container {
+  background: black;
+  display: inline-flex;
+  flex-direction: column;
+  border: 2px solid red;
+  width: auto;
+}
+
+.next-shape-wrapper {
+  display: inherit;
+}
+.next-shape-grid {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1px;
+  
+}
+
+@media screen and (min-width:769px){
+  .tetris-container{
+      flex-direction: row;
+  }
+
+  .tetris.grid-tile {
+      height: 30px;
+      width: 30px;
+  }
+
+
+}
+@media screen and (max-width:768px){
+  .tetris-container{
+      flex-direction: column;
+  }
+
+  .tetris.grid-tile {
+      height: 18px;
+      width: 18px;
+  }
+
+}
+@media screen and (max-width: 517px){
+  .tetris-container{
+      flex-direction: column;
+  }
+  .tetris.grid-tile {
+      height: 14px;
+      width: 14px;
+  }
+}
+
+.cards-xcontainer {
+  display: flex;
+  flex-direction: row
+
+}
+
+.board-container {
+  display: flex;
+  justify-items: center;
+  flex: 2;
+  flex-direction: column;
+  /* padding: 5px; */
+  color: blue;
+
+}
+
+.board-container, .tetris-container {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 1.5em;
+  display: flex;
+
+}
+
+.board-container form input {
+  color: white;
+
+}
+
+.tetris.options {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1em;
+  /* flex-direction: row;; */
+
+}
+
+.tetris.options > button {
+  display: flex;
+
+}
+
+span.game-title {
+  font-family: 'Press Start 2P';font-size: 22px;
+  color: purple;
+}
+
+.tetris-container > aside {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+
+}
+
+aside .score {
+  display: flex;
+  border: 2px solid red;
+  padding: 1em;
+  /* color: yellow; */
+
+}
+
+.tetris-container aside ul {
+  list-style: none;
+  font-size: small;
+}
+.tetris-container aside ul li{
+  padding-bottom: 10px;
+}
+
+.tetris-container aside p {
+  color: blue;
+  font-size: small;
+}
+
+.tetris.board {
+  display: flex;
+  background: black;
+
+}

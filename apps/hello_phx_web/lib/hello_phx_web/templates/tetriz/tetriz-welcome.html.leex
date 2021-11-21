@@ -1,0 +1,35 @@
+<div class="tetris-container">
+
+  <div class="board-container"
+       phx-hook="StopKeyScroll"
+       tabindex="0"
+       >
+    <div>
+      <h1 style="color: red">
+        Welcome to Tetris - Kachori.
+      </h1>
+
+      <form phx-submit="game_submit">
+
+        <label>Enter your name! (how about Red_Avenger ?) </label>
+        <input type="text" name="player-name"/>
+        <label>choose Game difficulty</label>
+
+        <div>
+
+          <input type="radio" name="game-mode"  value="Easy mode" checked="checked" />
+          <input type="radio" name="game-mode"  value="Evil mode" />
+        </div>
+        <input type="submit" value="start new game" />
+
+      </form>
+
+
+      <p>feedback? mail me</p>
+      <p> built with <span style="color: red"> &hearts; </span> by <a href="http://www.sandeshsoni.com">Sandesh Soni</a>, Pune, India </p>
+      <p> All copyrights and trademarks are owned by respective owners. </p>
+    </div>
+
+  </div>
+</div>
+</div>
